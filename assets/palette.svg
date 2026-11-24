@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="130" viewBox="0 0 960 130">
+  <rect width="960" height="130" rx="12" fill="#100A18"/>
+  <g font-family="Arial, sans-serif" font-size="15" fill="#F3E8F7">
+    <g><rect x="20" y="20" width="140" height="64" rx="8" fill="#15245B"/><text x="20" y="108">Electric indigo</text></g>
+    <g><rect x="175" y="20" width="140" height="64" rx="8" fill="#35133D"/><text x="175" y="108">Violet</text></g>
+    <g><rect x="330" y="20" width="140" height="64" rx="8" fill="#160D20"/><text x="330" y="108">Deep plum</text></g>
+    <g><rect x="485" y="20" width="140" height="64" rx="8" fill="#E77BD8"/><text x="485" y="108">Neon magenta</text></g>
+    <g><rect x="640" y="20" width="140" height="64" rx="8" fill="#E7A9F4"/><text x="640" y="108">Lavender</text></g>
+    <g><rect x="795" y="20" width="140" height="64" rx="8" fill="#6FA8FF"/><text x="795" y="108">Electric blue</text></g>
+  </g>
+</svg>
