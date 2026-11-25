@@ -1,0 +1,176 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460">
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#E9E4D7" stroke-opacity=".055"/>
+    </pattern>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D9F04A"/>
+      <stop offset="1" stop-color="#F15A3B"/>
+    </linearGradient>
+
+    <clipPath id="contentClip">
+      <rect x="40" y="145" width="920" height="250"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    text {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mono {
+      font-family: monospace;
+      letter-spacing: 1.5px;
+    }
+
+    .tile {
+      fill: #202127;
+      stroke: #E9E4D7;
+      stroke-opacity: .2;
+      transition: stroke-opacity .3s ease;
+    }
+
+    .tile-accent {
+      animation: tilePulse 3s ease-in-out infinite;
+    }
+
+    .signal {
+      animation: signal 2.5s ease-in-out infinite;
+    }
+
+    .scan {
+      animation: scan 6s ease-in-out infinite;
+    }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes tilePulse {
+      0%,100% { opacity:.5; }
+      50% { opacity:1; }
+    }
+
+    @keyframes signal {
+      0%,100% { opacity:.3; }
+      50% { opacity:1; }
+    }
+
+    @keyframes scan {
+      0%,100% { transform:translateY(0); opacity:.1; }
+      50% { transform:translateY(220px); opacity:.55; }
+    }
+
+    @keyframes float {
+      0%,100% { transform:translateY(0); }
+      50% { transform:translateY(-6px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation:none !important;
+      }
+    }
+  </style>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="460" fill="#17181D"/>
+  <rect width="1000" height="460" fill="url(#grid)"/>
+
+  <!-- HEADER -->
+  <text x="40" y="42" fill="#D9F04A" font-size="11" class="mono">004 / THE TOOLKIT</text>
+  <text x="960" y="42" fill="#E9E4D7" opacity=".55" font-size="10" text-anchor="end" class="mono">TOOLS &amp; TECHNOLOGIES</text>
+
+  <text x="40" y="105" fill="#E9E4D7" font-size="43" font-weight="900" letter-spacing="-2">TOOLS OF</text>
+  <text x="252" y="105" fill="#F15A3B" font-size="43" font-weight="900" letter-spacing="-2">THE TRADE.</text>
+
+  <rect x="40" y="120" width="920" height="1" fill="#E9E4D7" opacity=".2"/>
+
+  <!-- TOOL GRID -->
+  <g clip-path="url(#contentClip)">
+
+    <!-- ROW 1 -->
+    <g>
+      <rect class="tile" x="40" y="150" width="285" height="70"/>
+      <rect x="40" y="150" width="4" height="70" fill="#F15A3B"/>
+      <text x="62" y="180" fill="#E9E4D7" font-size="20" font-weight="bold">HTML</text>
+      <text x="62" y="201" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">STRUCTURE / MARKUP</text>
+      <circle cx="302" cy="168" r="4" fill="#F15A3B" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="357" y="150" width="285" height="70"/>
+      <rect x="357" y="150" width="4" height="70" fill="#345CEB"/>
+      <text x="379" y="180" fill="#E9E4D7" font-size="20" font-weight="bold">CSS</text>
+      <text x="379" y="201" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">STYLE / PRESENTATION</text>
+      <circle cx="619" cy="168" r="4" fill="#345CEB" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="674" y="150" width="286" height="70"/>
+      <rect x="674" y="150" width="4" height="70" fill="#D9F04A"/>
+      <text x="696" y="180" fill="#E9E4D7" font-size="20" font-weight="bold">JavaScript</text>
+      <text x="696" y="201" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">LOGIC / INTERACTION</text>
+      <circle cx="937" cy="168" r="4" fill="#D9F04A" class="signal"/>
+    </g>
+
+    <!-- ROW 2 -->
+    <g>
+      <rect class="tile" x="40" y="238" width="285" height="70"/>
+      <rect x="40" y="238" width="4" height="70" fill="#345CEB"/>
+      <text x="62" y="268" fill="#E9E4D7" font-size="20" font-weight="bold">React</text>
+      <text x="62" y="289" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">UI / COMPONENTS</text>
+      <circle cx="302" cy="256" r="4" fill="#345CEB" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="357" y="238" width="285" height="70"/>
+      <rect x="357" y="238" width="4" height="70" fill="#B88BEA"/>
+      <text x="379" y="268" fill="#E9E4D7" font-size="20" font-weight="bold">TypeScript</text>
+      <text x="379" y="289" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">TYPED JAVASCRIPT</text>
+      <circle cx="619" cy="256" r="4" fill="#B88BEA" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="674" y="238" width="286" height="70"/>
+      <rect x="674" y="238" width="4" height="70" fill="#D9F04A"/>
+      <text x="696" y="268" fill="#E9E4D7" font-size="20" font-weight="bold">Vite</text>
+      <text x="696" y="289" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">BUILD / DEVELOPMENT</text>
+      <circle cx="937" cy="256" r="4" fill="#D9F04A" class="signal"/>
+    </g>
+
+    <!-- ROW 3 -->
+    <g>
+      <rect class="tile" x="40" y="326" width="285" height="70"/>
+      <rect x="40" y="326" width="4" height="70" fill="#E9E4D7"/>
+      <text x="62" y="356" fill="#E9E4D7" font-size="20" font-weight="bold">Git</text>
+      <text x="62" y="377" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">VERSION CONTROL</text>
+      <circle cx="302" cy="344" r="4" fill="#E9E4D7" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="357" y="326" width="285" height="70"/>
+      <rect x="357" y="326" width="4" height="70" fill="#F15A3B"/>
+      <text x="379" y="356" fill="#E9E4D7" font-size="20" font-weight="bold">GitHub</text>
+      <text x="379" y="377" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">CODE / COLLABORATION</text>
+      <circle cx="619" cy="344" r="4" fill="#F15A3B" class="signal"/>
+    </g>
+
+    <g>
+      <rect class="tile" x="674" y="326" width="286" height="70"/>
+      <rect x="674" y="326" width="4" height="70" fill="#B88BEA"/>
+      <text x="696" y="356" fill="#E9E4D7" font-size="20" font-weight="bold">Supabase</text>
+      <text x="696" y="377" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">DATABASE / BACKEND</text>
+      <circle cx="937" cy="344" r="4" fill="#B88BEA" class="signal"/>
+    </g>
+
+    <rect class="scan" x="40" y="145" width="920" height="2" fill="#D9F04A"/>
+  </g>
+
+  <!-- FOOTER -->
+  <path d="M40 420H960" stroke="#E9E4D7" stroke-opacity=".2"/>
+  <text x="40" y="443" fill="#D9F04A" font-size="9" class="mono">CURRENTLY EXPLORING / ALWAYS EVOLVING</text>
+  <text x="960" y="443" fill="#E9E4D7" opacity=".5" font-size="9" text-anchor="end" class="mono">LEARN → BUILD → REPEAT</text>
+</svg>

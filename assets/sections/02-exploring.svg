@@ -1,0 +1,150 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" fill="none">
+  <defs>
+    <pattern id="exploreGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#E9E4D7" stroke-opacity=".055"/>
+    </pattern>
+    <linearGradient id="exploreBg" x1="0" y1="0" x2="1000" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24252D"/>
+      <stop offset="1" stop-color="#17181D"/>
+    </linearGradient>
+    <linearGradient id="orangeGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F15A3B"/>
+      <stop offset="1" stop-color="#D9F04A"/>
+    </linearGradient>
+    <clipPath id="exploreClip">
+      <rect width="1000" height="390" rx="3"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .panel {
+      transition: opacity .3s ease;
+    }
+    .scan {
+      animation: scan 5s linear infinite;
+    }
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .spin {
+      transform-box:fill-box;
+      transform-origin:center;
+      animation: spin 18s linear infinite;
+    }
+    .float {
+      animation: float 3.5s ease-in-out infinite;
+    }
+    .blink {
+      animation: blink 2.8s steps(1,end) infinite;
+    }
+    .bar {
+      animation: grow 2.5s ease-in-out infinite alternate;
+      transform-box:fill-box;
+      transform-origin:left;
+    }
+
+    @keyframes scan {
+      0% { transform:translateY(0); opacity:0; }
+      15% { opacity:.8; }
+      85% { opacity:.8; }
+      100% { transform:translateY(150px); opacity:0; }
+    }
+    @keyframes pulse {
+      0%,100% { opacity:.35; }
+      50% { opacity:1; }
+    }
+    @keyframes spin {
+      to { transform:rotate(360deg); }
+    }
+    @keyframes float {
+      0%,100% { transform:translateY(0); }
+      50% { transform:translateY(-7px); }
+    }
+    @keyframes blink {
+      0%,85%,100% { opacity:1; }
+      88%,93% { opacity:.15; }
+    }
+    @keyframes grow {
+      from { transform:scaleX(.55); }
+      to { transform:scaleX(1); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .scan,.pulse,.spin,.float,.blink,.bar { animation:none; }
+    }
+  </style>
+
+  <g clip-path="url(#exploreClip)">
+    <rect width="1000" height="390" fill="url(#exploreBg)"/>
+    <rect width="1000" height="390" fill="url(#exploreGrid)"/>
+
+    <!-- Header -->
+    <text x="38" y="35" fill="#D9F04A" font-family="monospace" font-size="11" letter-spacing="2">002 / CURRENTLY EXPLORING</text>
+    <text x="962" y="35" fill="#777780" font-family="monospace" font-size="10" text-anchor="end" letter-spacing="1.5">AREAS OF INTEREST</text>
+    <path d="M38 52H962" stroke="#E9E4D7" stroke-opacity=".2"/>
+
+    <!-- Main statement -->
+    <text x="38" y="113" fill="#E9E4D7" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" letter-spacing="-2">CURIOUS ABOUT</text>
+    <text x="38" y="157" fill="#B88BEA" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" letter-spacing="-2">WHAT'S POSSIBLE.</text>
+
+    <text x="962" y="115" fill="#92919A" font-family="monospace" font-size="10" text-anchor="end">NOT KNOWING EVERYTHING.</text>
+    <text x="962" y="132" fill="#92919A" font-family="monospace" font-size="10" text-anchor="end">JUST EXPLORING MORE.</text>
+
+    <!-- Panel 01 -->
+    <g>
+      <rect x="38" y="191" width="445" height="157" fill="#292A32" stroke="#E9E4D7" stroke-opacity=".17"/>
+      <rect x="38" y="191" width="4" height="157" fill="#D9F04A"/>
+      <text x="59" y="218" fill="#D9F04A" font-family="monospace" font-size="10" letter-spacing="1.5">01 / FOUNDATIONS</text>
+      <text x="59" y="253" fill="#E9E4D7" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="bold">COMPUTER SCIENCE</text>
+      <text x="59" y="277" fill="#AAA8B0" font-family="Arial, Helvetica, sans-serif" font-size="12">Understanding how software and technology work.</text>
+
+      <g transform="translate(410 280)">
+        <path d="M-22 -17H22V17H-22Z" stroke="#D9F04A" stroke-width="1.5"/>
+        <path d="M-11 -7L-3 0L-11 7M4 7H13" stroke="#D9F04A" stroke-width="2" stroke-linecap="square"/>
+        <circle class="pulse" cx="0" cy="-31" r="4" fill="#D9F04A"/>
+      </g>
+      <rect x="59" y="319" width="150" height="3" fill="#44444D"/>
+      <rect class="bar" x="59" y="319" width="150" height="3" fill="#D9F04A"/>
+    </g>
+
+    <!-- Panel 02 -->
+    <g>
+      <rect x="501" y="191" width="461" height="72" fill="#345CEB"/>
+      <text x="523" y="218" fill="#D9F04A" font-family="monospace" font-size="10" letter-spacing="1.5">02 / BUILDING</text>
+      <text x="523" y="246" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold">DEVELOPMENT</text>
+      <g class="float" transform="translate(901 228)">
+        <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="#FFFFFF" stroke-width="1.5" transform="rotate(45)"/>
+        <circle r="5" fill="#D9F04A"/>
+      </g>
+    </g>
+
+    <!-- Panel 03 -->
+    <g>
+      <rect x="501" y="276" width="220" height="72" fill="#F15A3B"/>
+      <text x="519" y="299" fill="#17181D" font-family="monospace" font-size="9" letter-spacing="1">03 / LOGIC</text>
+      <text x="519" y="327" fill="#17181D" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold">PROBLEM SOLVING</text>
+      <g class="blink">
+        <circle cx="692" cy="298" r="4" fill="#D9F04A"/>
+      </g>
+    </g>
+
+    <!-- Panel 04 -->
+    <g>
+      <rect x="739" y="276" width="223" height="72" fill="#B88BEA"/>
+      <text x="757" y="299" fill="#17181D" font-family="monospace" font-size="9" letter-spacing="1">04 / EXPERIMENTS</text>
+      <text x="757" y="327" fill="#17181D" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold">CREATIVE IDEAS</text>
+      <g class="spin" transform="translate(926 312)">
+        <path d="M0 -11L11 0L0 11L-11 0Z" fill="#D9F04A"/>
+      </g>
+    </g>
+
+    <!-- Animated scan line -->
+    <g class="scan">
+      <path d="M38 190H962" stroke="#D9F04A" stroke-opacity=".65" stroke-width="1"/>
+    </g>
+
+    <!-- Footer -->
+    <text x="38" y="374" fill="#777780" font-family="monospace" font-size="9" letter-spacing="1">LEARN / EXPERIMENT / REPEAT</text>
+    <text x="962" y="374" fill="#777780" font-family="monospace" font-size="9" text-anchor="end">GK / 002</text>
+  </g>
+</svg>

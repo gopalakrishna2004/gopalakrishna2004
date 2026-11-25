@@ -1,0 +1,183 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#E9E4D7" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="shelfGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D9F04A"/>
+      <stop offset="1" stop-color="#F15A3B"/>
+    </linearGradient>
+
+    <linearGradient id="studyGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#345CEB"/>
+      <stop offset="1" stop-color="#B88BEA"/>
+    </linearGradient>
+
+    <clipPath id="panelClip1">
+      <rect x="40" y="145" width="445" height="235" rx="2"/>
+    </clipPath>
+
+    <clipPath id="panelClip2">
+      <rect x="515" y="145" width="445" height="235" rx="2"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    text {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mono {
+      font-family: monospace;
+      letter-spacing: 1.5px;
+    }
+
+    .panel-line {
+      stroke: #E9E4D7;
+      stroke-opacity: .2;
+      fill: none;
+    }
+
+    .shelf-glow {
+      animation: shelfPulse 3s ease-in-out infinite;
+      transform-origin: 250px 255px;
+    }
+
+    .study-float {
+      animation: studyFloat 4s ease-in-out infinite;
+    }
+
+    .orbit {
+      animation: orbit 16s linear infinite;
+      transform-origin: 760px 260px;
+    }
+
+    .scan {
+      animation: scan 5s ease-in-out infinite;
+    }
+
+    .blink {
+      animation: blink 2s steps(2,end) infinite;
+    }
+
+    @keyframes shelfPulse {
+      0%,100% { opacity:.65; transform:scale(1); }
+      50% { opacity:1; transform:scale(1.06); }
+    }
+
+    @keyframes studyFloat {
+      0%,100% { transform:translateY(0); }
+      50% { transform:translateY(-9px); }
+    }
+
+    @keyframes orbit {
+      to { transform:rotate(360deg); }
+    }
+
+    @keyframes scan {
+      0%,100% { transform:translateY(0); opacity:.15; }
+      50% { transform:translateY(150px); opacity:.7; }
+    }
+
+    @keyframes blink {
+      50% { opacity:.25; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="440" fill="#17181D"/>
+  <rect width="1000" height="440" fill="url(#grid)"/>
+
+  <!-- HEADER -->
+  <text x="40" y="42" fill="#D9F04A" font-size="11" class="mono">003 / THE WORKSHOP</text>
+  <text x="960" y="42" fill="#E9E4D7" opacity=".55" font-size="10" text-anchor="end" class="mono">SELECTED BUILDS — 2026</text>
+
+  <text x="40" y="105" fill="#E9E4D7" font-size="43" font-weight="900" letter-spacing="-2">IDEAS,</text>
+  <text x="178" y="105" fill="#F15A3B" font-size="43" font-weight="900" letter-spacing="-2">MADE REAL.</text>
+
+  <rect x="40" y="120" width="920" height="1" fill="#E9E4D7" opacity=".2"/>
+
+  <!-- SHELF PANEL -->
+  <g clip-path="url(#panelClip1)">
+    <rect x="40" y="145" width="445" height="235" fill="#202127"/>
+    <rect x="40" y="145" width="445" height="235" fill="url(#grid)"/>
+
+    <rect x="40" y="145" width="445" height="4" fill="#D9F04A"/>
+
+    <!-- Shelf visual -->
+    <g class="shelf-glow">
+      <rect x="305" y="195" width="125" height="125" fill="none" stroke="#D9F04A" stroke-width="1.5" transform="rotate(8 367 257)"/>
+      <rect x="322" y="211" width="125" height="125" fill="#D9F04A" fill-opacity=".08" stroke="#F15A3B" stroke-width="1.5" transform="rotate(-8 384 273)"/>
+      <rect x="344" y="231" width="65" height="85" fill="#17181D" stroke="#D9F04A" stroke-width="1.5"/>
+      <path d="M355 245H398 M355 258H391 M355 271H400 M355 284H383" stroke="#E9E4D7" stroke-opacity=".65" stroke-width="3"/>
+      <circle cx="400" cy="300" r="5" fill="#F15A3B"/>
+    </g>
+
+    <path d="M285 170V355" stroke="#E9E4D7" stroke-opacity=".1" stroke-dasharray="3 6"/>
+    <path d="M40 350H485" stroke="#E9E4D7" stroke-opacity=".12"/>
+    <rect class="scan" x="40" y="155" width="445" height="1" fill="#D9F04A" opacity=".3"/>
+  </g>
+
+  <text x="65" y="180" fill="#D9F04A" font-size="10" class="mono">01 / PRODUCT BUILD</text>
+  <text x="65" y="225" fill="#E9E4D7" font-size="34" font-weight="900" letter-spacing="-1">SHELF</text>
+  <text x="65" y="250" fill="#E9E4D7" opacity=".7" font-size="12">A personal bookmark workspace.</text>
+  <text x="65" y="270" fill="#E9E4D7" opacity=".7" font-size="12">Save, organize and revisit</text>
+  <text x="65" y="287" fill="#E9E4D7" opacity=".7" font-size="12">the things worth keeping.</text>
+
+  <rect x="65" y="315" width="102" height="22" fill="#D9F04A"/>
+  <text x="116" y="330" text-anchor="middle" fill="#17181D" font-size="9" font-weight="bold" class="mono">GITHUB REPO</text>
+  <text x="65" y="365" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">DESIGN / BUILD / REFINE</text>
+
+  <!-- ALGOLENS PANEL -->
+  <g clip-path="url(#panelClip2)">
+    <rect x="515" y="145" width="445" height="235" fill="#202127"/>
+    <rect x="515" y="145" width="445" height="235" fill="url(#grid)"/>
+    <rect x="515" y="145" width="445" height="4" fill="#B88BEA"/>
+
+    <!-- AlgoLens visual -->
+    <g class="study-float">
+      <rect x="770" y="190" width="135" height="125" fill="#17181D" stroke="#345CEB" stroke-width="1.5"/>
+      <rect x="770" y="190" width="135" height="20" fill="#345CEB"/>
+      <circle cx="782" cy="200" r="3" fill="#D9F04A"/>
+      <circle cx="793" cy="200" r="3" fill="#F15A3B"/>
+      <circle cx="804" cy="200" r="3" fill="#B88BEA"/>
+      <rect x="785" y="225" width="48" height="5" fill="#E9E4D7" opacity=".8"/>
+      <rect x="785" y="239" width="105" height="4" fill="#E9E4D7" opacity=".2"/>
+      <rect x="785" y="255" width="105" height="18" fill="#345CEB" opacity=".35"/>
+      <rect x="785" y="255" width="65" height="18" fill="#345CEB"/>
+      <rect x="785" y="283" width="105" height="18" fill="#B88BEA" opacity=".25"/>
+      <rect x="785" y="283" width="42" height="18" fill="#B88BEA"/>
+    </g>
+
+    <g class="orbit">
+      <circle cx="760" cy="260" r="91" fill="none" stroke="#B88BEA" stroke-opacity=".4" stroke-dasharray="3 8"/>
+      <circle cx="760" cy="169" r="4" fill="#D9F04A"/>
+    </g>
+
+    <path d="M760 170V350" stroke="#E9E4D7" stroke-opacity=".08" stroke-dasharray="3 6"/>
+  </g>
+
+  <text x="540" y="180" fill="#B88BEA" font-size="10" class="mono">02 / LEARNING PROJECT</text>
+  <text x="540" y="225" fill="#E9E4D7" font-size="34" font-weight="900" letter-spacing="-1">ALGOLENS</text>
+  <text x="540" y="250" fill="#E9E4D7" opacity=".7" font-size="12">An interactive algorithm learning space.</text>
+  <text x="540" y="270" fill="#E9E4D7" opacity=".7" font-size="12">Organizing data structures and algorithms</text>
+  <text x="540" y="287" fill="#E9E4D7" opacity=".7" font-size="12">and exploring them step by step.</text>
+
+  <rect x="540" y="315" width="112" height="22" fill="#345CEB"/>
+  <text x="596" y="330" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold" class="mono">GITHUB REPO</text>
+  <text x="540" y="365" fill="#E9E4D7" opacity=".45" font-size="9" class="mono">EXPLORE / VISUALIZE / LEARN</text>
+
+  <!-- FOOTER -->
+  <path d="M40 400H960" stroke="#E9E4D7" stroke-opacity=".2"/>
+  <text x="40" y="422" fill="#D9F04A" font-size="9" class="mono">MORE EXPERIMENTS IN PROGRESS</text>
+  <text x="960" y="422" fill="#E9E4D7" opacity=".5" font-size="9" text-anchor="end" class="mono">NOT JUST IDEAS. THINGS I'M BUILDING.</text>
+  <circle cx="943" cy="418" r="3" fill="#F15A3B" class="blink"/>
+</svg>

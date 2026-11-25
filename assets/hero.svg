@@ -1,0 +1,305 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 320"
+     width="1000" height="320">
+
+  <defs>
+    <!-- Background grid -->
+    <pattern id="grid" width="24" height="24"
+             patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none"
+            stroke="#FFFFFF" stroke-opacity=".055"/>
+    </pattern>
+
+    <!-- Artwork gradient -->
+    <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B88BEA"/>
+      <stop offset=".5" stop-color="#E34C91"/>
+      <stop offset="1" stop-color="#F15A3B"/>
+    </linearGradient>
+
+    <!-- Animated glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="artClip">
+      <rect x="650" y="0" width="350" height="320"/>
+    </clipPath>
+
+    <style>
+      .mono {
+        font-family: "Courier New", monospace;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+      }
+
+      .display {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        letter-spacing: -3px;
+      }
+
+      /* NAME: ONE-TIME DIGITAL FLICKER */
+      .name-motion {
+        animation: namePowerOn 1.1s steps(1, end) 1 both;
+      }
+
+      @keyframes namePowerOn {
+        0% {
+          opacity: 0;
+          filter: brightness(0);
+        }
+        8% {
+          opacity: 1;
+          filter: brightness(1.8);
+        }
+        15% {
+          opacity: .1;
+          filter: brightness(.5);
+        }
+        23% {
+          opacity: 1;
+          filter: brightness(1.5);
+        }
+        31% {
+          opacity: .35;
+          filter: brightness(.7);
+        }
+        39% {
+          opacity: 1;
+          filter: brightness(1.8);
+        }
+        48% {
+          opacity: .65;
+          filter: brightness(.9);
+        }
+        58% {
+          opacity: 1;
+          filter: brightness(1.3);
+        }
+        68% {
+          opacity: .85;
+          filter: brightness(1);
+        }
+        78%, 100% {
+          opacity: 1;
+          filter: brightness(1);
+        }
+      }
+
+      /* NAME ENTRY ACCENT */
+      .name-accent {
+        animation: accentFlash 3s ease-in-out infinite;
+      }
+
+      @keyframes accentFlash {
+        0%, 100% { opacity: .3; }
+        50% { opacity: 1; }
+      }
+
+      /* MOVING UNDERLINE */
+      .colour-sweep {
+        animation: sweep 3s ease-in-out infinite;
+      }
+
+      @keyframes sweep {
+        0% { transform: translateX(0); opacity: 0; }
+        25% { opacity: 1; }
+        75% { transform: translateX(82px); opacity: 1; }
+        100% { transform: translateX(82px); opacity: 0; }
+      }
+
+      /* PULSING DIAMOND */
+      .signal-marker {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: signalPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes signalPulse {
+        0%, 100% {
+          opacity: .3;
+          transform: scale(.7);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.4);
+        }
+      }
+
+      /* RIGHT SIDE ORBIT */
+      .orbit {
+        transform-origin: 820px 160px;
+        animation: rotate 18s linear infinite;
+      }
+
+      @keyframes rotate {
+        to { transform: rotate(360deg); }
+      }
+
+      /* FLOATING GEOMETRY */
+      .float {
+        animation: drift 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes drift {
+        from { transform: translateY(-9px); }
+        to { transform: translateY(9px); }
+      }
+
+      /* CENTRAL POINT */
+      .core {
+        animation: corePulse 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes corePulse {
+        from {
+          opacity: .6;
+          r: 7;
+        }
+        to {
+          opacity: 1;
+          r: 12;
+        }
+      }
+
+      /* REDUCED MOTION */
+      @media (prefers-reduced-motion: reduce) {
+        .name-motion,
+        .name-accent,
+        .colour-sweep,
+        .signal-marker,
+        .orbit,
+        .float,
+        .core {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="320" fill="#17181D"/>
+  <rect width="1000" height="320" fill="url(#grid)"/>
+
+  <!-- REGISTRATION MARK -->
+  <path d="M18 18H44 M18 18V44"
+        stroke="#E9E4D7" stroke-width="1"/>
+
+  <text x="32" y="33" fill="#E9E4D7"
+        font-size="8" class="mono">
+    PERSONAL DIGITAL SPACE / 001
+  </text>
+
+  <!-- NAME -->
+  <g fill="#E9E4D7" class="name-motion">
+    <text x="42" y="128" font-size="59" class="display">
+      GOPALA
+    </text>
+
+    <text x="42" y="190" font-size="59" class="display">
+      KRISHNA
+    </text>
+  </g>
+
+  <!-- SMALL ACCENT NEXT TO NAME -->
+  <path d="M375 112 L381 118 L375 124 L369 118 Z"
+        fill="#D9F04A" class="signal-marker"/>
+
+  <!-- COLOUR SIGNATURE -->
+  <rect x="42" y="210" width="45" height="5" fill="#D9F04A"/>
+  <rect x="87" y="210" width="25" height="5" fill="#F15A3B"/>
+  <rect x="112" y="210" width="12" height="5" fill="#345CEB"/>
+
+  <!-- MOVING HIGHLIGHT -->
+  <rect x="42" y="210" width="18" height="5"
+        fill="#FFFFFF" class="colour-sweep"/>
+
+  <!-- INTRODUCTION -->
+  <text x="42" y="242" fill="#E9E4D7"
+        font-size="9" class="mono">
+    BCA STUDENT / ASPIRING SOFTWARE DEVELOPER
+  </text>
+
+  <text x="42" y="266" fill="#D9F04A"
+        font-size="9" class="mono">
+    BUILDING · LEARNING · EXPERIMENTING
+  </text>
+
+  <!-- ARTWORK -->
+  <g clip-path="url(#artClip)">
+
+    <circle cx="820" cy="160" r="133"
+            fill="#345CEB" opacity=".23"/>
+
+    <!-- ORBIT -->
+    <g class="orbit">
+      <circle cx="820" cy="160" r="105"
+              fill="none" stroke="#D9F04A"
+              stroke-width="1" opacity=".8"/>
+
+      <circle cx="820" cy="55" r="4"
+              fill="#D9F04A" filter="url(#glow)"/>
+    </g>
+
+    <!-- GEOMETRIC FORMS -->
+    <g class="float">
+
+      <path d="M720 0H1000V155L845 0Z"
+            fill="#D9F04A"/>
+
+      <path d="M720 0H845L720 125Z"
+            fill="#F15A3B"/>
+
+      <path d="M845 0L1000 155V320H660Z"
+            fill="url(#spectrum)"/>
+
+      <path d="M660 320L845 125L1000 280V320Z"
+            fill="#17181D" opacity=".08"/>
+
+    </g>
+
+    <!-- CENTRAL CORE -->
+    <circle cx="820" cy="160" r="10"
+            fill="#E9E4D7" class="core"/>
+
+    <!-- VERTICAL ACCENT -->
+    <rect x="704" y="100" width="9" height="140"
+          fill="#D9F04A"/>
+
+    <!-- SMALL LABEL -->
+    <text x="880" y="32" fill="#E9E4D7"
+          font-size="7" class="mono">
+      EST. 2004
+    </text>
+
+  </g>
+
+  <!-- TECHNICAL DETAILS -->
+  <text x="650" y="270" fill="#A7A5A0"
+        font-size="7" class="mono">
+    ID: 004 / V: 002
+  </text>
+
+  <text x="650" y="284" fill="#A7A5A0"
+        font-size="7" class="mono">
+    SIGNAL ACTIVE
+  </text>
+
+  <text x="830" y="286" fill="#E9E4D7"
+        font-size="7" class="mono">
+    DESIGN IN PROGRESS
+  </text>
+
+  <path d="M830 294H950V275"
+        fill="none" stroke="#F15A3B" stroke-width="1"/>
+
+  <circle cx="950" cy="275" r="2.5"
+          fill="#F15A3B"/>
+
+</svg>
